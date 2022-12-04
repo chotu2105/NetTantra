@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .con{
+        min-height: 120vh;
+        width: 50%;
+        border: 2px solid red;
+        padding-top:0px ;
+        background-color: rgba(56, 231, 231, 0.499);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius:30px ;
+}
+    .box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* width: 70%; */
+       
+    }
+    input{
+        /* width: 200px; */
+        height:3.5vh;
+        width: 100%;
+        border: 2px solid black;
+        margin: 2px;
+        border:2px solid rgb(115, 101, 67);
+    }
+    label{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 700;
+        
+        
+    }
+    table  {
+        padding:5px;
+        width:100%;
+        
+  border-spacing:10px ;
+}
+.error-stm{
+    max-height: 5vh;
+    background-color:white;
+    color:red;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    justify-content: space-between;
+    border:2px solid red;
+}
+.error-stm >h1{
+    margin: auto;
+    text-transform: capitalize;
+
+}
+
+button{
+  background-color:  rgba(0, 9, 9, 0.499);
+  border: none;
+  color: white;
+  padding: 15px 55px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+.close-btn{
+    height: 35px;
+    width:35px;
+    border-radius: 2px;
+    padding: 0;
+    background: red;
+}
+.gen-data{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+input[type=radio]{
+    margin:0 10px;
+}
+</style>
+<body>
+    <form action="/" method="post">
+    <div class="box">
+        
+        <div class="con">
+            
+                
+            <table>
+                <tr>
+                    <td colspan="2">
+                    <% if(error!=""){ %> 
+                        <div class="error-stm">
+                           <h5> <%=error%></h5>
+                            <button class="close-btn" >X</button>
+                        </div> 
+                        <%}%>
+                    </td>
+                </tr>
+                <tr>
+                    <tr>
+                        <td><label for="">Name*</label></td> 
+                    </tr>
+                   
+                    <td><input required type="text" name="firstname" placeholder="First"></td>
+                    <td><input required type="text" name="lastname" placeholder="Last"></td>
+                </tr>
+                <tr >
+                    <td><label for="">Date of Birth</label></td>
+                    <tr>
+                     
+                        <td  colspan="2"><input required type="date" name="dob" placeholder="MM/DD/YYYY"></td>
+                    </tr>
+                    
+                </tr>
+                <tr >
+                    <td><label for="">Email</label></td>
+                    <tr>
+                     
+                        <td  colspan="2"><input required type="text" name="email" placeholder=""></td>
+                    </tr>
+                    
+                </tr>
+                <tr>
+                    <td><label for="">father's Name*</label></td>
+                    
+                    <tr>
+                        <td><input required type="text" name="fatherfirstname" placeholder="First"></td>
+                        <td><input required type="text" name="fatherlastname" placeholder="Last"></td>
+                    </tr>
+                  
+                </tr>
+                <tr>
+                    <td><label for="">Mother's Name*</label></td>
+                    
+                    <tr>
+                        <td><input required type="text" name="motherfirstname" placeholder="First"></td>
+                        <td><input required type="text" name="motherlastname" placeholder="Last"></td>
+                    </tr>
+                  
+                </tr>
+                <tr>
+                    <td><label for="">Gender</label></td>
+                    
+                    <tr>
+                        <td class="gen-data"><Label >Male</Label>
+                        <input required type="radio" name="gen" placeholder="First"></td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="gen-data"><Label >Female</Label>
+                        <input required type="radio" name="gen" placeholder="Last"></td>
+                    </tr>
+                  
+                </tr>
+                <!-- <tr >
+                    <td><label for="">Email</label></td>
+                    <tr>
+                     
+                        <td  colspan="2"><input required type="text" name="email" placeholder="email"></td>
+                    </tr>
+                    
+                </tr> -->
+                <tr >
+                    <td><label for="">Nationality</label></td>
+                    <tr>
+                     
+                        <td  colspan="2"><input required type="text" name="nationality" placeholder="nationality"></td>
+                    </tr>
+                    
+                </tr>
+                <tr >
+                    <td><label for="">Select Address*</label></td>
+                    <tr>
+                     
+                        <td  colspan="2"><input required type="text" placeholder="address"></td>
+                    </tr>
+                    
+                </tr>
+                <tr>
+                    <!-- <td><label for="">Mother's Name*</label></td> -->
+                    
+                    <!-- <tr>
+                        <td><input required type="text" placeholder="First"></td>
+                        <td><input required type="text" placeholder="Last"></td>
+                    </tr> -->
+                  
+                </tr>
+                <tr >
+                    <td><label for="">Telephone-Phone</label></td>
+                    <tr>
+                     
+                        <td  colspan="2"><input required type="tel" name="phnnumber" placeholder="phoneno"></td>
+                    </tr>
+                    
+                </tr>
+                <tr >
+                    <td><label for="">telePhone-Mobile</label></td>
+                    <tr>
+                     
+                        <td  colspan="2"><input name="mobnumber" required type="text" placeholder="mobileno"></td>
+                        <!-- <img src="/images/551d45e8ba48810e64761177075ea723.jpeg"/> -->
+                    </tr>
+                    
+                </tr>
+                <tr>
+                    <td><button type="submit">Nexts</button></td> 
+                </tr>
+            </table>
+        
+        </div>
+    </div>
+    
+</form>
+
+</body>
+<script>
+   document.querySelector(".close-btn").addEventListener("click",(e)=>{
+e.preventDefault();
+document.querySelector(".error-stm").style.display="none"
+
+   })
+</script>
+</html>
